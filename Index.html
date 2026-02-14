@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umer Farooq | Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f0f0f0;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        #hero {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 50px;
+            color: white;
+            border: 4px solid #00cfff;
+            border-radius: 20px;
+            background: linear-gradient(rgba(30, 60, 114, 0.6), rgba(42, 82, 152, 0.6)),
+                url('Img/Gemini_Generated_Image_smp1g1smp1g1smp1.png') center/cover no-repeat;
+        }
+
+        #hero .hero-left h1 {
+            font-size: 4rem;
+        }
+
+        #hero .hero-left p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        #hero a.btn {
+            margin-top: 20px;
+            border-radius: 30px;
+            padding: 12px 30px;
+            background-color: #00cfff;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        #hero a.btn:hover {
+            background-color: #1e90ff;
+            transform: scale(1.05);
+        }
+
+        /* Section Headings */
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #1e90ff;
+        }
+
+        /* Section Borders & Colors */
+        section {
+            padding: 60px 20px;
+            width: 100%;
+            border: 4px solid #1e90ff;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            transition: transform 0.3s;
+        }
+
+        section:hover {
+            transform: translateY(-3px);
+        }
+
+        /* About Section */
+        #about {
+            background: #fdf6e3;
+        }
+
+        #about p {
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Skills Section */
+        #skills {
+            background: #e6f0ff;
+        }
+
+        .skill {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #1e90ff;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .skill i {
+            font-size: 2rem;
+            color: #1e90ff;
+        }
+
+        .skill:hover {
+            transform: scale(1.05);
+            border-color: #00cfff;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid #1e90ff;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: #00cfff;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .project-card img:hover {
+            opacity: 0.9;
+        }
+
+        .project-card .content {
+            padding: 15px;
+        }
+
+        .project-card h3 {
+            color: #1e90ff;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .project-card a {
+            display: inline-block;
+            padding: 8px 15px;
+            background: #1e90ff;
+            color: white;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .project-card a:hover {
+            background: #00cfff;
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #e0ffe6;
+        }
+
+        #contact p {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        #contact a {
+            color: #1e90ff;
+        }
+
+        #contact a:hover {
+            color: #00cfff;
+        }
+
+        /* Footer */
+        footer {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            border: 4px solid #00cfff;
+            border-radius: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 20px;
+            }
+
+            #hero .hero-left h1 {
+                font-size: 3rem;
+            }
+
+            #hero .hero-left p {
+                font-size: 1.2rem;
+            }
+
+            #hero .hero-right img {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section id="hero" class="container-fluid d-flex flex-wrap align-items-center">
+        <div class="row w-100 align-items-center">
+            <div class="col-md-6 hero-left">
+                <h1>Umer Farooq</h1>
+                <p>Aspiring Web Developer & Digital Designer</p>
+                <a href="#projects-website" class="btn btn-primary">View My Website Project</a>
+            </div>
+            <div class="col-md-6 hero-right text-end">
+                <img src="Img/46710402488.png" alt="Logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am a motivated web development student with hands-on experience building responsive websites using
+                HTML, CSS, and JavaScript. I have completed a full website project during professional training.
+                Additionally, I create digital character designs and have basic knowledge of AI tools for creative and
+                technical applications. Continuously learning and exploring new technologies to improve my skills.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="row justify-content-center g-3">
+                <div class="col-md-3 skill"><i class="fab fa-html5"></i>HTML</div>
+                <div class="col-md-3 skill"><i class="fab fa-css3-alt"></i>CSS</div>
+                <div class="col-md-3 skill"><i class="fab fa-js-square"></i>JavaScript</div>
+                <div class="col-md-3 skill"><i class="fab fa-bootstrap"></i>Bootstrap</div>
+                <div class="col-md-3 skill"><i class="fas fa-mobile-alt"></i>Responsive Design</div>
+                <div class="col-md-3 skill"><i class="fas fa-user-pen"></i>Character Design</div>
+                <div class="col-md-3 skill"><i class="fas fa-robot"></i>Basic AI Tools</div>
+                <div class="col-md-3 skill"><i class="fas fa-file-word"></i>MS Office</div>
+                <div class="col-md-3 skill"><i class="fas fa-image"></i>Photoshop</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Website Project Section -->
+    <section id="projects-website">
+        <div class="container">
+            <h2>Website Project</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="project-website.jpg" alt="Aptech Website Project">
+                    <div class="content">
+                        <h3>Aptech Website Project</h3>
+                        <p>Responsive website built during professional training with product sections and interactive
+                            features.</p>
+                        <a href="https://example.com" target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Character Designs Section -->
+    <section id="projects-characters">
+        <div class="container">
+            <h2>Character Designs</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="character1.jpg" alt="Character 1">
+                    <div class="content">
+                        <h3>Character 1</h3>
+                        <p>Digital character design focusing on expressions, pose, and style consistency.</p>
+                        <a href="#">View Gallery</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="character2.jpg" alt="Character 2">
+                    <div class="content">
+                        <h3>Character 2</h3>
+                        <p>Creative digital character work with AI-assisted tools.</p>
+                        <a href="#">View Gallery</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:umerfarooq63831@email.com">umerfarooq63831@email.com</a></p>
+            <p>Phone: +92-3234671664</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/umer-farooq-4632283b1/"
+                    target="_blank">linkedin.com/in/umer-farooq-4632283b1</a></p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Umer Farooq. All rights reserved.
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
